@@ -1,0 +1,17 @@
+#N canvas 565 198 587 297 10;
+#N canvas 1 77 450 300 (subpatch) 0;
+#X array expDec 4096 float 2;
+#X coords 0 1 4096 -1 200 140 1 0 0;
+#X restore 16 15 graph;
+#X obj 263 91 pack s \$0;
+#X msg 263 66 gmu.env.expdec.aif;
+#X obj 263 41 loadbang;
+#X obj 263 138 soundfiler;
+#X msg 263 115 read -resize \$1 expDec;
+#X text 267 14 load exponential decay envelope.;
+#X text 95 201 (envelope is from GMU granular patches http://www.gmem.org/index.php?option=com_content&view=article&id=349&Itemid=345)
+;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
